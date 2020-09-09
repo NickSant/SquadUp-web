@@ -14,11 +14,14 @@ export default createGlobalStyle`
         width: 100%;
 
         font-family: Roboto, sans-serif;
+        text-decoration: none;
     }
 
     button {
         border: 0;
         background: none;
+        cursor: pointer;
+        font-family: Montserrat, sans-serif;
     }
 
     html{
@@ -27,7 +30,9 @@ export default createGlobalStyle`
 
     :root {
         --primary-dark-blue: #04142e;
+        --primary-lighter-blue: #061e45;
         --secondary-pink: #d916bb;
+        --text-white: #ffffff;
         
     }
 `;
