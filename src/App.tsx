@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 
 import Routes from "./routes";
+
+import SignupProvider from "./context/Register";
 
 import GlobalStyles from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <>
-    <GlobalStyles />
-    <Routes/>
-    </>
+    <SignupProvider>
+      <GlobalStyles />
+      <Routes />
+    </SignupProvider>
   );
 }
 

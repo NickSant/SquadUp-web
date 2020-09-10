@@ -1,46 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { Container } from "../../../styles/Form";
 
 import Input from "../../Input";
-
-interface FormData {
-    name: string,
-    username: string;
-    email: string;
-    password: string;
-    bio: string;
-    platforms: Array<string>;
-    games: Array<string>;
+import { useSignup } from "../../../context/Register";
+interface Props {
+  navigation: {
+    previous?: (() => void) | undefined;
+    next: () => void;
+  };
 }
 
+const UserContact: React.FC<Props> = ({ navigation }) => {
+  const { next, previous } = navigation;
 
-interface Props{
-    formData: FormData;
-    setFormData: Function;
-    navigation: {
-        previous?: (() => void) | undefined;
-        next: () => void;
-    }
-}
+  return (
+    <>
+      <h3> Qual seu email? </h3>
+      <form autoComplete="off">
+        <Input type="email" name="Email" label="email" />
 
-const UserContact: React.FC<Props> = ({ formData, setFormData, navigation}) => {
-    const { email } = formData;
-    const { next, previous } = navigation;
-    return(
-        <Container>
-            <h3> Qual seu email? </h3>
-            <form autoComplete="off">
-                <Input type="email" name="Email" label="email"/>
-                
-                {/* comandos invertidos */}
-                <button onClick={previous}> Próximo </button>
-                <button onClick={next}> Anterior </button>
-            </form>
-            
-        </Container>
-    );
-}
+        {/* comandos invertidos */}
+        <div className="small-links">
+          <button onClick={next}> Anterior </button>
+          <button onClick={previous}> Próximo </button>
+        </div>
+      </form>
+    </>
+  );
+};
 
 export default UserContact;

@@ -7,11 +7,14 @@ import MultiStepForm from '../../components/SignupMultiForm';
 
 export default function Signup(){
     return(
-        <Container>
+       
+            <Container>
             <h1> Registrar no SquadUp </h1>
         
             <MultiStepForm />
             
-        </Container>
+            </Container>
+        
+        
     );
 }

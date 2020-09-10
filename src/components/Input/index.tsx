@@ -11,7 +11,7 @@ const Input: React.FC<InputProps> = ({label, name, ...rest}) => {
   return(
     <FormGroup>
         <TextInput placeholder={name} id={name} {...rest}/>
-        <TextLabel htmlFor={name}> {label} </TextLabel>
+        <TextLabel htmlFor={name}> {name} </TextLabel>
     </FormGroup>
   );
 }

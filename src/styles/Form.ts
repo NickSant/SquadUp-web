@@ -13,6 +13,15 @@ export const Container = styled.div`
     font-family: Montserrat, sans-serif;
     color: var(--text-white);
     font-weight: 700;
+    padding: 3px;
+    border-bottom: 3px solid var(--secondary-pink);
+    margin-bottom: 20px;
+  }
+
+  > h3 {
+    font-family: Montserrat, sans-serif;
+    color: var(--text-white);
+    font-weight: 700;
   }
 
   form {
@@ -52,6 +61,9 @@ export const Container = styled.div`
       align-items: center;
       justify-content: space-between;
 
+      button{
+        width: 150px;
+      }
       small {
         font-weight: 700;
         font-size: 14px;
