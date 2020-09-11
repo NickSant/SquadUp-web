@@ -22,6 +22,13 @@ export const Container = styled.div`
     font-family: Montserrat, sans-serif;
     color: var(--text-white);
     font-weight: 700;
+    font-size: 25px;
+  }
+
+  > p {
+    font-family: Montserrat, sans-serif;
+    color: var(--text-white);
+    margin-top: 20px;
   }
 
   form {
@@ -29,7 +36,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 10px 30px;
 
     width: 100%;
     max-width: 500px;
@@ -55,19 +62,17 @@ export const Container = styled.div`
       }
     }
 
-    .small-links {
+    .footer-links {
       width: 80%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-
-      button{
-        width: 150px;
-      }
+      justify-content: center;
+      
       small {
         font-weight: 700;
         font-size: 14px;
         color: var(--text-white);
+        margin: 20px 10px;
 
         transition: ease-in 0.2s;
 
@@ -76,6 +81,18 @@ export const Container = styled.div`
         }
       }
 
+    }
+
+    .footer-buttons{
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button{
+        width: 150px;
+        margin: 20px 10px;
+      }
     }
   }
 `;

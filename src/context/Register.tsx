@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, ReactNode, SetStateAction, Dispatch } from "react";
 
 interface DefaultValues {
   name: string;
@@ -14,8 +14,8 @@ interface DefaultValues {
   setUsername: (value: string) => void;
   setPassword: (value: string) => void;
   setBio: (value: string) => void;
-  /* setGames: (value: Array<string>) => void;
-  setPlatforms: (value: Array<string>) => void; */
+  setGames: Dispatch<SetStateAction<never[]>>;
+  setPlatforms: Dispatch<SetStateAction<never[]>>;
 }
 
 export const SignupContext = createContext<DefaultValues | undefined>(void 0);
@@ -43,9 +43,9 @@ const SignupProvider: React.FC<ReactNode> = ({ children }) => {
         bio,
         setBio,
         games,
-        //setGames,
+        setGames,
         platforms,
-        //setPlatforms, 
+        setPlatforms, 
       }}
     >
       {children}

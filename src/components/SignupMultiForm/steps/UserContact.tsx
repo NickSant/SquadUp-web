@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Container } from "../../../styles/Form";
+import { useSignup } from "../../../context/Register";
 
 import Input from "../../Input";
-import { useSignup } from "../../../context/Register";
 interface Props {
   navigation: {
     previous?: (() => void) | undefined;
@@ -15,16 +14,34 @@ interface Props {
 const UserContact: React.FC<Props> = ({ navigation }) => {
   const { next, previous } = navigation;
 
+  const dataContext = useSignup();
+  if (dataContext === undefined) {
+    throw new Error("Deu ruim");
+  }
+
+  const { email, setEmail } = dataContext;
   return (
     <>
       <h3> Qual seu email? </h3>
+      <p> (Relaxa, a gente não vai ficar te enviando curso de investimento) </p>
       <form autoComplete="off">
-        <Input type="email" name="Email" label="email" />
+        <Input
+          type="email"
+          name="Email"
+          label="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
         {/* comandos invertidos */}
-        <div className="small-links">
-          <button onClick={next}> Anterior </button>
-          <button onClick={previous}> Próximo </button>
+        <div className="footer-buttons">
+          <button onClick={previous}> Anterior </button>
+          <button onClick={next}> Próximo </button>
+        </div>
+        <div className="footer-links">
+          <Link to="/">
+            <small> Já tem cadastro? </small>
+          </Link>
         </div>
       </form>
     </>

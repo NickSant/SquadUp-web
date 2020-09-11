@@ -29,7 +29,7 @@ function Login() {
         />
 
         <button> Entrar </button>
-        <div className="small-links">
+        <div className="footer-links">
           <Link to="/">
             <small> Esqueceu sua senha? </small>
           </Link>

@@ -22,30 +22,24 @@ const UserNames: React.FC<Props> = ({ navigation }) => {
     throw new Error("Deu ruim");
   }
 
-  const { name, setName, username, setUsername } = dataContext;
+  const { password, setPassword } = dataContext;
 
   return (
     <>
-      <h3> Como devemos te chamar? </h3>
-      <p> (Bota um username legal, nada de JoaozinhoM4t4d0r666!)</p>
+      <h3> Defina uma senha </h3>
+      <p> (Se for botar seu nome + 123 é melhor nem entrar...) </p>
       <form autoComplete="off">
         <Input
-          type="text"
-          name="Nome"
-          label="Nome"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Input
-          type="text"
-          name="Username"
-          label="Nome de Usuário"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          type="password"
+          name="Senha"
+          label="Senha"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
 
         {/* Comandos invertidos */}
         <div className="footer-buttons">
+          <button onClick={previous}> Anterior </button>
           <button onClick={next}> Próximo </button>
         </div>
         <div className="footer-links">
